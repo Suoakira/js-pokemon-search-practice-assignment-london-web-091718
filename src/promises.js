@@ -9,13 +9,13 @@ const getPokemon = pokemon =>
     fetch(`http://localhost:3000/pokemon/${pokemon}`)
         .then(resp => resp.json())
 
-//create a pokemon
-const createPokemon = pokemon =>
-    fetch(`http://localhost:3000/pokemon`, {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(pokemon)
-}).then(resp => resp.json())
+// //create a pokemon
+// const createPokemon = pokemon =>
+//     fetch(`http://localhost:3000/pokemon`, {
+//         method: "POST",
+//         headers: { "Content-Type": "application/json" },
+//         body: JSON.stringify(pokemon)
+// }).then(resp => resp.json())
 
 //delete a pokemon
 const deletePokemon = pokemon =>
@@ -23,10 +23,10 @@ const deletePokemon = pokemon =>
         method: "DELETE"
 })
 
-//update a pokemon
-const updatePokemon = pokemon =>
-    fetch(`http://localhost:3000/pokemon/${pokemon.id}`, {
-        method: "patch",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(pokemon)
-    })
+// //update a pokemon
+// const updatePokemon = pokemon =>
+//     fetch(`http://localhost:3000/pokemon/${pokemon.id}`, {
+//         method: "patch",
+//         headers: { "Content-Type": "application/json" },
+//         body: JSON.stringify(pokemon)
+//     })

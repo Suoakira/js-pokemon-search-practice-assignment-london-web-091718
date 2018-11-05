@@ -25,7 +25,7 @@ class Pokemon {
                     class="toggle-sprite" 
                     src="${this.spriteFront}">
                     
-                    <button id="del">delete</button>
+                    <button id="v${this.id}">delete</button>
                 </div>
                 </div>
             </div>
@@ -36,12 +36,12 @@ class Pokemon {
 
         const image = document.getElementById(this.id) // couldnt interopolate this with query selector
 
-        let buttonDel = document.querySelector("#del")
+        let buttonDel = document.getElementById(`v${this.id}`)
 
         buttonDel.addEventListener("click", (event) => { 
             deletePokemon(this)
             .catch(error => console.log(error))
-            pokemonElement.remove()
+            pokemonElement.innerHTML = ""
         })
 
         image.addEventListener("click", () => {
