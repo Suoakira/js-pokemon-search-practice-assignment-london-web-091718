@@ -1,3 +1,4 @@
+
 //get all the pokemon
 const getPokemons = () =>
     fetch('http://localhost:3000/pokemon')

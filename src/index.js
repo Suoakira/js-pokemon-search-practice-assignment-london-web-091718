@@ -5,12 +5,15 @@ let filter = ""
 
 let pokemonInstances = []
 
-const addPokemons = pokemons =>
-  pokemons.forEach(pokemon => {
-      const pokemonInstance = new Pokemon(pokemon)
-      pokemonInstances.push(pokemonInstance)
-      pokemonInstance.addPokemon() 
-    })
+const addPokemons = pokemons => // refactored some code
+  pokemonInstances = pokemons.map(pokemon => new Pokemon(pokemon).addPokemon())
+
+// const addPokemons = pokemons =>
+//   pokemons.forEach(pokemon => {
+//       const pokemonInstance = new Pokemon(pokemon)
+//       pokemonInstances.push(pokemonInstance)
+//       pokemonInstance.addPokemon() 
+//     })
 
 
 getPokemons() // contains the array of all the pokemon
