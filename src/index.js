@@ -5,15 +5,15 @@ let filter = ""
 
 let pokemonInstances = []
 
-const addPokemons = pokemons => // refactored some code
-  pokemonInstances = pokemons.map(pokemon => new Pokemon(pokemon).addPokemon())
+// const addPokemons = pokemons => // refactored some code but didnt work
+//   pokemonInstances = pokemons.map(pokemon => new Pokemon(pokemon).addPokemon())
 
-// const addPokemons = pokemons =>
-//   pokemons.forEach(pokemon => {
-//       const pokemonInstance = new Pokemon(pokemon)
-//       pokemonInstances.push(pokemonInstance)
-//       pokemonInstance.addPokemon() 
-//     })
+const addPokemons = pokemons =>
+  pokemons.forEach(pokemon => {
+      const pokemonInstance = new Pokemon(pokemon)
+      pokemonInstances.push(pokemonInstance)
+      pokemonInstance.addPokemon() 
+    })
 
 
 getPokemons() // contains the array of all the pokemon
@@ -23,7 +23,7 @@ getPokemons() // contains the array of all the pokemon
 const searchPokemon = () => {
 
   filter = searchTerm.value
-  let matches = pokemonInstances.filter(pokemon => pokemon.name.toLowerCase().includes(filter.toLowerCase()))
+  let matches = pokemonInstances.filter(pokemon => pokemon.name.includes(filter))
 
   pokeList.innerHTML = ""
   // document.querySelector("#pokemon-search-input").innerHTML = ""
