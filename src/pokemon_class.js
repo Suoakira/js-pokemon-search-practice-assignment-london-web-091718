@@ -16,7 +16,7 @@ class Pokemon {
     addPokemon() {
         const pokemonElement = document.createElement("div")
         pokemonElement.innerHTML = `
-        <div style="width:230px;margin:10px;background:#fecd2f;color:#2d72fc" class="pokemon-frame">
+        <div style="width:230px;margin:10px;background:#fecd2f;color:#2d72fc" class="row pokemon-frame">
             <h1 class="center-text">${this.name}</h1>
             <div style="width:239px;margin:auto">
                 <div style="width:96px;margin:auto">
@@ -33,11 +33,14 @@ class Pokemon {
         `  
 
         this.pokemonContainer.appendChild(pokemonElement)
-        const image = document.querySelector(".toggle-sprite")
+
+        const image = document.getElementById(this.id) // couldnt interopolate this with query selector
+
         let buttonDel = document.querySelector("#del")
 
         buttonDel.addEventListener("click", (event) => { 
-            deletePokemon(pokemon)
+            deletePokemon(this)
+            .catch(error => console.log(error))
             pokemonElement.remove()
         })
 
